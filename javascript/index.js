@@ -44,7 +44,6 @@ const api = `https://dragonball-api.com/api/characters?page=${page}&limit=10`
 
 const main = document.querySelector("#main")
 
-main.classList.add("row", "row-cols-1", "row-cols-md-2")
 main.innerHTML=`
     
 
@@ -56,10 +55,11 @@ Toastify({
     newWindow: true,
     close: false,
     gravity: "top", // `top` or `bottom`
-    position: "left", // `left`, `center` or `right`
+    position: "right", // `left`, `center` or `right`
     stopOnFocus: true, // Prevents dismissing of toast on hover
     style: {
       background: "linear-gradient(to right, #00b09b, #96c93d)",
+      color: "black",
     },
     onClick: function(){} // Callback after click
   }).showToast();
@@ -113,7 +113,7 @@ fetch(api)
                     
                 `
                 const mostrar = document.createElement("button")
-                mostrar.classList.add("button-pages","muestre","mb-3")
+                mostrar.classList.add("button-pages","mt-2","mb-3")
                 mostrar.setAttribute('data-bs-toggle', 'modal');
                 mostrar.setAttribute('data-bs-target', '#exampleModal');
                 mostrar.innerText="MOSTRAR"

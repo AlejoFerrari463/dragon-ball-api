@@ -6,13 +6,31 @@
 
 }
 
+.navbar {
+
+    background-color: #6D0257;
+
+}
+
+.navbar-collapse{
+
+    display: flex;
+    justify-content: center;
+    margin-right: 60px;
+
+}
+.nav-link {
+
+    font-size: 20px;
+    color: #FE971B;
+
+}
 
 
 
 .card {
 
  
-
     display: grid;
     grid-template-columns: 1fr;
 
@@ -21,7 +39,8 @@
 
     margin: 30px;
 
-    background-color: red;
+    background-color: #8A016D;
+    color: #FE971B;
 
 }
 
@@ -32,8 +51,6 @@
     padding-top: 5px;
 
 }
-
-
 
 
 .contenedor-button-pages {
@@ -66,8 +83,12 @@
 }
 
 
-.modal {
 
-   margin-top: 30px;
+
+.modal-header {
+
+    justify-content: center;
+
 
 }
+
