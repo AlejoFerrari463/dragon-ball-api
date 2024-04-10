@@ -116,7 +116,7 @@ fetch(api)
                 mostrar.classList.add("button-pages","mt-2","mb-3")
                 mostrar.setAttribute('data-bs-toggle', 'modal');
                 mostrar.setAttribute('data-bs-target', '#exampleModal');
-                mostrar.innerText="MOSTRAR"
+                mostrar.innerText="SHOW"
 
                 
                     
