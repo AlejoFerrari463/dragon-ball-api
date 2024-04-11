@@ -49,25 +49,11 @@ main.innerHTML=`
 
 `
 
-Toastify({
-    text: `Pagina actual: ${page}`,
-    duration: 1000,
-    newWindow: true,
-    close: false,
-    gravity: "top", // `top` or `bottom`
-    position: "right", // `left`, `center` or `right`
-    stopOnFocus: true, // Prevents dismissing of toast on hover
-    style: {
-      background: "linear-gradient(to right, #00b09b, #96c93d)",
-      color: "black",
-    },
-    onClick: function(){} // Callback after click
-  }).showToast();
+const nube = document.querySelector(".page-nube")
+nube.innerHTML=`${page}`
 
 
 
-setTimeout(() => {
-    
 
 
 fetch(api)
@@ -144,6 +130,9 @@ fetch(api)
                })
         
             })
+            .catch((error)=>{
+                console.log(error)
+            })
 
             
 
@@ -156,13 +145,7 @@ fetch(api)
     })
 
         
-    
-   
-    .catch((error)=>{
-        console.log(error)
-    })
 
-},200);
 
 
 }

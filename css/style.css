@@ -10,8 +10,9 @@ body {
 
     background-image: url("https://i.pinimg.com/originals/b7/c2/ac/b7c2ac38b5c9601d7dc2a3de1b4e74d7.png");
     background-repeat:no-repeat;
-    background-size: 100vw;
     background-attachment:fixed;
+    background-size: cover;
+    background-position: center;
 
 }
 
@@ -26,12 +27,18 @@ body {
 
     display: flex;
     justify-content: center;
-    margin-right: 60px;
+    margin-right: 80px;
 
 }
 .nav-link {
 
     font-size: 20px;
+    color: #FFA500;
+
+}
+
+.nav-link:hover{
+
     color: #F48522;
 
 }
@@ -67,8 +74,8 @@ body {
 
     position: fixed;
     bottom: 20px;
-    left: 0;
-    right: 0;
+    left: 0px;
+    right: 23px;
     display: flex;  
     justify-content: center;
     align-items: center;
@@ -94,8 +101,131 @@ body {
 
 }
 
+.button-pages:hover {
+
+    background-color: #0E2E62;
+
+}
 
 
+.nube-voladora{
+
+    position: absolute;
+    top: 80px;
+    background-color: #DEDA59;
+    right: 50px;
+    width: 20px;
+    height: 20px;
+
+    border-radius: 50%;
+
+
+}
+
+.nube-voladora2{
+
+    position: absolute;
+    top: 75px;
+    background-color: #DEDA59;
+    right: 42px;
+    width: 20px;
+    height: 20px;
+
+    border-radius: 50%;
+
+
+}
+
+.nube-voladora3{
+
+    position: absolute;
+    top: 80px;
+    background-color: #DEDA59;
+    right: 34px;
+    width: 20px;
+    height: 20px;
+
+    border-radius: 50%;
+
+
+}
+
+.nube-voladora4{
+
+    position: absolute;
+    top: 75px;
+    background-color: #DEDA59;
+    right: 26px;
+    width: 20px;
+    height: 20px;
+
+    border-radius: 50%;
+
+
+}
+
+.nube-voladora5{
+
+    position: absolute;
+    top: 80px;
+    background-color: #CFCB4B;
+    right: 18px;
+    width: 20px;
+    height: 20px;
+
+    border-radius: 50%;
+
+
+}
+
+.nube-voladora6{
+
+    position: absolute;
+    top: 85px;
+    background-color: #CFCB4B;
+    right: 42px;
+    width: 20px;
+    height: 20px;
+
+    border-radius: 50%;
+
+
+}
+
+.nube-voladora7{
+
+    position: absolute;
+    top: 85px;
+    background-color: #DEDA59;
+    right: 26px;
+    width: 20px;
+    height: 20px;
+
+    border-radius: 50%;
+
+
+}
+
+.contenedor-nube {
+
+    position: fixed;
+    top: 0px;
+    right: -5px;
+ 
+
+}
+
+.page-nube {
+
+    position: fixed;
+    top: 75px;
+    right: 35px;
+    font-size: 20px;
+    font-weight: bold;
+    z-index: 1000;
+    color: #F48522;
+
+}
 
 .modal-header {
 
