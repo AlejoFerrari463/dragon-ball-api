@@ -63,7 +63,7 @@ body {
 
 .card-img-top {
 
-    height: 350px;
+    height: 450px;
     object-fit: contain;
     padding-top: 5px;
 
@@ -227,10 +227,33 @@ body {
 
 }
 
+.modal-card {
+
+    background-color: #BCEEFC;
+    color: #F48522;
+}
+
+
+.modal-tam-imagen {
+
+    height: 650px;
+}
+
+
 .modal-header {
 
     justify-content: center;
-
+    border: none;
+    margin-bottom: -20px;
 
 }
 
+.modal-footer {
+
+    justify-content: center;
+    border: none;
+    margin-top: 20px;
+    margin-bottom: 10px;
+
+
+}

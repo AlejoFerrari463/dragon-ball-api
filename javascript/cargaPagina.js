@@ -19,7 +19,8 @@ export function cargarData(page){
         next.style.display="flex"
     }
     
-        
+    
+
     
     const api = `https://dragonball-api.com/api/characters?page=${page}&limit=10`
     
@@ -55,7 +56,9 @@ export function cargarData(page){
                 })
                 .then((response2)=>{
                     
-                    const {name, image, race} = response2
+                    const {id, name, image, race} = response2
+
+                   
     
                     const main = document.querySelector("#main")
     
@@ -68,7 +71,28 @@ export function cargarData(page){
     
                     imagen.setAttribute('data-bs-toggle', 'modal');
                     imagen.setAttribute('data-bs-target', '#exampleModal');
-    
+
+                    const modalBody =document.querySelector(".modal-body")
+                        modalBody.innerHTML=`
+
+                        <div id="carouselExample" class="carousel slide">
+                            <div class="carousel-inner">
+                                
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                        
+                        
+        
+                        `
+               
     
                    imagen.innerHTML = `
                         
@@ -78,14 +102,63 @@ export function cargarData(page){
                     imagen.addEventListener("click",()=>{
     
                         const tituloModal =document.querySelector(".modal-title")
+                        tituloModal.classList.add("fs-3")
                         tituloModal.innerText=`${name}`
+
+                               
+
+
+                        fetch(`https://dragonball-api.com/api/characters/${id}`)
+                        .then((responseModal)=>{
+
+                        return responseModal.json()
+
+                        })
+                        .then((responseModal2)=>{
+                            
+                            
+                            const buscandoDivCarousel = document.querySelector(".carousel-inner")
+                            buscandoDivCarousel.innerHTML = ``
+                            
+                            const agregarImagenCarousel = document.createElement("div")
+                            agregarImagenCarousel.classList.add("carousel-item","active")
+                                    
+                            agregarImagenCarousel.innerHTML=`
+                            
+                            <img class="card-img-top modal-tam-imagen"  src="${image}" alt="">
+                            
+                            `
+                            buscandoDivCarousel.appendChild(agregarImagenCarousel)
+
+                            responseModal2.transformations.forEach((element)=>{
+                                
+                                const {name} = element
+
+                                console.log(name)
+                                
+                                const agregarImagenCarousel = document.createElement("div")
+
+                                
+                                agregarImagenCarousel.classList.add("carousel-item")
+                                                      
+
+                                agregarImagenCarousel.innerHTML = `
+                                
+                                    <img class="card-img-top modal-tam-imagen"  src="${element.image}" alt="">
+                                
+                                `
+
+                                buscandoDivCarousel.appendChild(agregarImagenCarousel) 
+
+                            })
+                            
+                        console.log(responseModal2)
+                        })
+                        .catch((errorModal)=>{
+                            console.log(errorModal)
+                        })
         
-                        const modalBody =document.querySelector(".modal-body")
-                        modalBody.innerHTML=`
                         
-                        <img class="card-img-top"  src="${image}" alt="">
-        
-                        `
                         
                        })
     
