@@ -1,3 +1,5 @@
+import * as cargar from '/javascript/cargaCarousel.js'
+
 export function cargarData(page){
 
 
@@ -47,18 +49,19 @@ export function cargarData(page){
         .then((response)=>{
     
             response.items.forEach(element => {
+
+
                 const {id} = element
     
                 fetch(`https://dragonball-api.com/api/characters/${id}`)
-                
                 .then((info2)=>{
                     return info2.json()
                 })
                 .then((response2)=>{
                     
+                
                     const {id, name, image, race} = response2
-
-                   
+      
     
                     const main = document.querySelector("#main")
     
@@ -105,61 +108,10 @@ export function cargarData(page){
                         tituloModal.classList.add("fs-3")
                         tituloModal.innerText=`${name}`
 
-                               
+                      
+                        cargar.cargarCarousel(id)
+                          
 
-
-                        fetch(`https://dragonball-api.com/api/characters/${id}`)
-                        .then((responseModal)=>{
-
-                        return responseModal.json()
-
-                        })
-                        .then((responseModal2)=>{
-                            
-                            
-                            const buscandoDivCarousel = document.querySelector(".carousel-inner")
-                            buscandoDivCarousel.innerHTML = ``
-                            
-                            const agregarImagenCarousel = document.createElement("div")
-                            agregarImagenCarousel.classList.add("carousel-item","active")
-                                    
-                            agregarImagenCarousel.innerHTML=`
-                            
-                            <img class="card-img-top modal-tam-imagen"  src="${image}" alt="">
-                            
-                            `
-                            buscandoDivCarousel.appendChild(agregarImagenCarousel)
-
-                            responseModal2.transformations.forEach((element)=>{
-                                
-                                const {name} = element
-
-                                console.log(name)
-                                
-                                const agregarImagenCarousel = document.createElement("div")
-
-                                
-                                agregarImagenCarousel.classList.add("carousel-item")
-                                                      
-
-                                agregarImagenCarousel.innerHTML = `
-                                
-                                    <img class="card-img-top modal-tam-imagen"  src="${element.image}" alt="">
-                                
-                                `
-
-                                buscandoDivCarousel.appendChild(agregarImagenCarousel) 
-
-                            })
-                            
-                        console.log(responseModal2)
-                        })
-                        .catch((errorModal)=>{
-                            console.log(errorModal)
-                        })
-        
-                        
-                        
                        })
     
                     const titulo = document.createElement("h5")
