@@ -1,6 +1,9 @@
 
 
-export function cargarCarousel(id) {
+export function cargarCarousel(id,name) {
+    
+    
+    
 
     fetch(`https://dragonball-api.com/api/characters/${id}`)
     .then((responseModal)=>{
@@ -9,27 +12,30 @@ export function cargarCarousel(id) {
 
     })
     .then((responseModal2)=>{
-        
-        const { image } = responseModal2
+
 
         const buscandoDivCarousel = document.querySelector(".carousel-inner")
         buscandoDivCarousel.innerHTML = ``
-        
+               
+
+        const { image } = responseModal2
+
         const agregarImagenCarousel = document.createElement("div")
         agregarImagenCarousel.classList.add("carousel-item","active")
                 
         agregarImagenCarousel.innerHTML=`
-        
+        <div class="modal-titulo" >${name}</div>
         <img class="card-img-top modal-tam-imagen"  src="${image}" alt="">
         
         `
+
+        
         buscandoDivCarousel.appendChild(agregarImagenCarousel)
 
         responseModal2.transformations.forEach((element)=>{
             
-            const {name} = element
+            const {name,image} = element
 
-            console.log(name)
             
             const agregarImagenCarousel = document.createElement("div")
 
@@ -38,11 +44,12 @@ export function cargarCarousel(id) {
                                   
 
             agregarImagenCarousel.innerHTML = `
-            
-                <img class="card-img-top modal-tam-imagen"  src="${element.image}" alt="">
+
+                <div class="modal-titulo" >${name}</div>
+                <img class="card-img-top modal-tam-imagen"  src="${image}" alt="${name}">
             
             `
-
+            
             buscandoDivCarousel.appendChild(agregarImagenCarousel) 
 
         })

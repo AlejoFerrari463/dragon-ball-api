@@ -20,6 +20,7 @@ body {
 .navbar {
 
     background-color: #184287;
+   
 
 }
 
@@ -231,12 +232,21 @@ body {
 
     background-color: #BCEEFC;
     color: #F48522;
+    
+}
+
+.modal {
+
+   padding-right: 23px;
+  
+
 }
 
 
 .modal-tam-imagen {
 
     height: 650px;
+   
 }
 
 
@@ -256,4 +266,31 @@ body {
     margin-bottom: 10px;
 
 
+}
+
+.carousel-control-prev {
+
+    height: 30px;
+    margin-top: 311px;
+
+}
+
+.carousel-control-next {
+
+    height: 30px;
+    margin-top: 311px;
+
+}
+
+.modal-arrow {
+
+    color: #ff00d4;
+  
+}
+
+.modal-titulo {
+    font-size: 30px;
+    margin-top: -10px;
+    margin-bottom: 20px;
+    text-align: center;
 }

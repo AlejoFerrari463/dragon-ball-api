@@ -78,16 +78,16 @@ export function cargarData(page){
                     const modalBody =document.querySelector(".modal-body")
                         modalBody.innerHTML=`
 
-                        <div id="carouselExample" class="carousel slide">
+                        <div id="carouselExample" class="carousel slide"> 
                             <div class="carousel-inner">
                                 
                             </div>
                             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="fa-solid fa-arrow-left fa-2xl modal-arrow" aria-hidden="true"></span>
                                 <span class="visually-hidden">Previous</span>
                             </button>
                             <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="fa-solid fa-arrow-right fa-2xl modal-arrow" aria-hidden="true"></span>
                                 <span class="visually-hidden">Next</span>
                             </button>
                         </div>
@@ -104,12 +104,10 @@ export function cargarData(page){
     
                     imagen.addEventListener("click",()=>{
     
-                        const tituloModal =document.querySelector(".modal-title")
-                        tituloModal.classList.add("fs-3")
-                        tituloModal.innerText=`${name}`
+                        
 
                       
-                        cargar.cargarCarousel(id)
+                        cargar.cargarCarousel(id,name)
                           
 
                        })
