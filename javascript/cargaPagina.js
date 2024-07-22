@@ -1,4 +1,4 @@
-import * as cargar from '/javascript/cargaCarousel.js'
+import * as cargar from './cargaCarousel.js'
 
 export function cargarData(page){
 

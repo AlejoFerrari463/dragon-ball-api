@@ -1,5 +1,5 @@
 
-import * as cargar from '/javascript/cargaPagina.js'
+import * as cargar from './cargaPagina.js'
 
 let page=1
 
